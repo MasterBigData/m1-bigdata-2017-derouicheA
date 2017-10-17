@@ -1,0 +1,62 @@
+
+import java.util.ArrayList;
+
+// reponse exercice 1
+    //1) il existe un constructeur par defaut
+	//2) erreur ds l'execution on peu pas acceder à un champs privée d'une autre classe , il faut crée un accesseur
+	//3) il faut respecter le principe de l'encapsulation
+	//4) accesseur : get , on doit le faire car les attributs sont Private 
+	//5) on a cree un constructeur complet donc constructeur par defau n'existe pas
+public class Point 
+{ private int x ;
+  private int y ;
+  static int nb ;//7) on a utiliser staticpour pouvoir connaitre à tt moment le nbre de point creé
+   public Point ()
+   {}
+  //constructeur complet
+  public Point (int x , int y)
+  {  //6)on utilise this pour enlever l'ambiguité
+	 this.x=x ;
+	 this.y=y;
+	 nb=nb+1 ;
+  }
+  //8) constructeur qui fait appel au constructeur complet
+  public Point ( Point p) 
+  {    
+	  this(p.getAbs() , p.getOrd() ) ;
+  }
+   public String ToString ()
+   { return "("+ x +","+ y+")" ;
+	   
+   }
+ 
+  //la methode get pour avoir accée au attribut en dehors de la classe puisque
+  //elles sont "private"
+ 
+  public int getOrd()
+  { return (y);
+  }
+ 
+  public int getAbs()
+  { return (x) ;
+  }
+  //exercice 2:1) le "==" pour les chaines de caratéres et les type primitifs mais on a p1 et p2 deux objets 
+  //il faut cree un algo qui compare 2 objets : la methode isSameAs
+  
+  //methode egale pour voir on a le mm point ou nn 
+  public boolean isSameAs(Point p1)
+  {  if (p1.getAbs() == this.x && p1.getOrd()==this.y )
+  return (true) ;
+  else return (false) ;
+   } 
+  //exercice 4 : 1)translater soit l'abs soit l ord soit les deux 
+  public void translate(int u, int v)
+  {x+=u ;
+  y+=v ;
+  }
+  
+}
+	
+
+	
+

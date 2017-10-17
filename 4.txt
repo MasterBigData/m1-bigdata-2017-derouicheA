@@ -1,0 +1,19 @@
+public class Circle 
+{
+	Point centre ;
+	int rayon ;
+	
+	public Circle (Point p , int r) 
+	{
+		centre = p ;
+		rayon = r ;
+	}
+	public void translate(int dx , int dy )
+	{
+		centre.translate(dx, dy);
+	}
+	public String ToString()
+	{
+		return ("le centre est" +centre.ToString()+"le rayon"+rayon ) ;
+	}
+}

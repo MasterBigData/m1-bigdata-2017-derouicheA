@@ -1,0 +1,48 @@
+public class LigneBrisée 
+{  Point [] T ;
+  //Max = taille maximale de tableau 
+  int Max ;
+  int nbPoint ; //combien de point ds le tableau
+  
+  public LigneBrisée (int n) 
+   {   Max=n ;
+       nbPoint =0 ;
+	   T = new Point [n] ;
+   }
+   public void add (Point p)
+   {
+	   if ( nbPoint < Max )
+   {  T[nbPoint] = p ;
+	   nbPoint = nbPoint +1 ;
+	}
+   else System.out.println("tableau plein") ;
+   }
+   //max 
+   public int pointCapacity()
+   {
+	   return Max ;
+   }
+   //
+   public int nbPoints()
+   {
+	   return nbPoint ;
+   }
+   public boolean Contains (Point z)
+   {for ( Point i : T )
+   {if (z.isSameAs(i))
+	   return true ;
+   }
+  return false ;
+   }
+   
+	   
+	   
+   }
+   
+   
+   
+   
+   
+   
+   
+   
