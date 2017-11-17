@@ -1,11 +1,12 @@
 package model;
 
-public class Ring extends Cercle 
-{
+import view.DrawableRing;
+
+public class Ring extends Cercle{
+	
 	private int SmalR;
 
-	public Ring(Point p, int br,int sr)
-	{
+	public Ring(Point p, int br,int sr) {
 		super( p,  br);
 		if (sr>br)
 		{
@@ -14,7 +15,7 @@ public class Ring extends Cercle
 		else 
 			SmalR=sr;
 		
-		
+		ds=new DrawableRing(this);
 	}
 
 	public int getSmalR() {
@@ -35,10 +36,5 @@ public class Ring extends Cercle
 
 		  return ( "\n Anneau et de centre  "+super.toString() + "et de petit rayon =  "+SmalR);
 
-		  
-
-		  }
-	public boolean conatin(Point p) {
-		return true;
 	}
 }

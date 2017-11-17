@@ -1,9 +1,7 @@
 package model;
-
 import view.DrawableShape;
 
-public class Shape 
-{
+public class Shape {
 	private Point centre ;
 	  public DrawableShape ds ;
 	  public Shape ( Point centre) 
@@ -15,5 +13,4 @@ public class Shape
 	  {
 	   return centre ;
 	  }
-	
 }

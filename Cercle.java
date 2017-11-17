@@ -2,11 +2,16 @@ package model;
 
 import view.DrawCercle;
 
-public class Cercle extends Shape
+public class Cercle  extends Shape
 {
 	private Point ctr;
 	private int r;
-
+	
+	public Cercle(Point C, int rayon)
+	{super(C) ;
+		r=rayon;
+		ds=new DrawCercle(this) ;
+	}
 	public int getR() {
 		return r;
 	}
@@ -18,11 +23,7 @@ public class Cercle extends Shape
 		ctr.translate(x, y);
 	}
 
-	public Cercle(Point C, int rayon)
-	{super(C) ;
-		r=rayon;
-		ds=new DrawCercle(this) ;
-	}
+	
 
 	public String toString() {
 		return "[ Cercle de centre " + ctr.toString() + "et de rayon r= " + r + " et de surface =  "+this.surface()+"]";
